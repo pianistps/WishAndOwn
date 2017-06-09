@@ -13,6 +13,13 @@ RSpec.describe User, type: :model do
     expect(build(:user, email: nil)).not_to be_valid
   end
 
+  it "requires a unique email" do
+    create(:user, email: "user@email.com")
+    user = build(:user, email: "user@email.com")
+    user.valid?
+    expect(user.errors.full_messages).to include("Email has already been taken")
+  end
+
   it "is invalid without a valid email" do
     expect(build(:user, email: "user.gmail.com")).not_to be_valid
   end
