@@ -10,7 +10,7 @@ describe "User Signup", type: :feature do
     fill_in("user[name]", :with => @user1.name)
     fill_in("user[email]", :with => @user1.email)
     fill_in("user[password]", :with => @user1.password)
-    click_button('Create User')
+    click_button('Sign Up')
 
     expect(current_path).to eq('/users/1')
     expect(page).to have_content("Welcome #{@user1.name}")
