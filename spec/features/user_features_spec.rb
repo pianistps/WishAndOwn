@@ -3,7 +3,7 @@ require_relative "../rails_helper.rb"
 describe "User Signup", type: :feature do
 
   it  "successfully signs up" do
-    @user = build(:user)
+    @user1 = build(:user)
     visit '/'
     click_link('Sign Up')
     expect(current_path).to eq('/users/new')
