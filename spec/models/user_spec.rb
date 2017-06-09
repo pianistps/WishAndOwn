@@ -26,5 +26,10 @@ RSpec.describe User, type: :model do
     expect(build(:user, password: "12345678")).to be_valid
   end
 
-  it "encrypts the password upon saving"
+  it "encrypts the password upon saving" do
+    user = build(:user)
+    user.save
+    expect(user.password_digest).to be_truthy
+    expect(user.password_digest).not_to eq(user.password)
+  end
 end
