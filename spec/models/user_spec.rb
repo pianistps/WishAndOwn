@@ -47,15 +47,15 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe "relationships" do
-
-  end
-
-  describe "class methods" do
-
-  end
-
-  describe "instance methods" do
-
-  end
+  # describe "relationships" do
+  #
+  # end
+  #
+  # describe "class methods" do
+  #
+  # end
+  #
+  # describe "instance methods" do
+  #
+  # end
 end
