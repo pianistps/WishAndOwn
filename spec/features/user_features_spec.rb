@@ -16,4 +16,16 @@ describe "User Signup", type: :feature do
     expect(page).to have_content("Welcome #{@user1.name}")
   end
 
+  it "on sign up, successfully adds a session hash" do
+    @user1 = build(:user)
+    visit '/'
+    click_link('Sign Up')
+    fill_in("user[name]", :with => @user1.name)
+    fill_in("user[email]", :with => @user1.email)
+    fill_in("user[password]", :with => @user1.password)
+    click_button('Sign Up')
+    expect(page.get_rack_session_key('user_id')).to_not be_nil
+  end
+
+
 end
