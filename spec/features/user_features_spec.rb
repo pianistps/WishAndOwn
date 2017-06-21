@@ -39,7 +39,7 @@ describe "User Signup", type: :feature do
   end
 
   it 'prevents user from viewing user show page and redirects to home page if not logged in' do
-    @user = create(:user)
+    create(:user)
     visit '/users/1'
     expect(current_path).to eq('/')
     expect(page).to have_content("Sign Up")
