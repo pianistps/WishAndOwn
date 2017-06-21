@@ -31,10 +31,10 @@ describe "User Signup", type: :feature do
     @user = create(:user)
     visit '/'
     click_link('Sign In')
-    fill_in("user[name]", :with => @user.email)
+    fill_in("user[email]", :with => @user.email)
     fill_in("user[password]", :with => @user.password)
     click_button('Sign In')
-    
+
     expect(page.get_rack_session_key('user_id')).to_not be_nil
   end
 
