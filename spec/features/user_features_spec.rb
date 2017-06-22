@@ -72,4 +72,17 @@ describe "User Signout", type: :feature do
     click_link("Log Out")
     expect(current_path).to eq('/')
   end
+
+  it "successfully destroys session hash when 'Log Out' is clicked" do
+    @user4 = build(:user)
+    visit '/'
+    click_link('Sign Up')
+    fill_in("user[name]", with: @user4.name)
+    fill_in("user[email]", with: @user4.email)
+    fill_in("user[password]", with: @user4.password)
+    click_button("Sign Up")
+    click_link("Log Out")
+    expect(page.get_rack_session).to_not include("user_id")
+  end
+
 end
