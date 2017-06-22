@@ -61,4 +61,15 @@ describe "User Signout", type: :feature do
     expect(page).to have_content("Log Out")
   end
 
+  it 'redirects to home page after logging out' do
+    @user3 = build(:user)
+    visit '/'
+    click_link('Sign Up')
+    fill_in("user[name]", with: @user3.name)
+    fill_in("user[email]", with: @user3.email)
+    fill_in("user[password]", with: @user3.password)
+    click_button('Sign Up')
+    click_link("Log Out")
+    expect(current_path).to eq('/')
+  end
 end
