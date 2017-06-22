@@ -1,9 +1,19 @@
 <%= form_for(User.new, url: sessions_path) do |f| %>
+  <% if @user %>
+    <% if @user.errors.any? %>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  <% end %>
+
   <%= f.label :email %>
   <%= f.text_field :email %>
 
   <%= f.label :password %>
-  <%= f.text_field :password %>
+  <%= f.password_field :password %>
 
   <%= f.submit "Sign In" %>
 <% end %>
