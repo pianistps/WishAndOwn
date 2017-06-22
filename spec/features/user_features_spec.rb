@@ -52,7 +52,6 @@ describe "User Signout", type: :feature do
 
   it 'has a link to log out from the users/show page' do
     @user2 = build(:user)
-    usertest = "testing my github"
     visit '/'
     click_link('Sign Up')
     fill_in("user[name]", :with => @user2.name)
