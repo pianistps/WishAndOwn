@@ -47,3 +47,18 @@ describe "User Signup", type: :feature do
 
 
 end
+
+describe "User Signout", type: :feature do
+
+  it 'has a link to log out from the users/show page' do
+    @user2 = build(:user)
+    visit '/'
+    click_link('Sign Up')
+    fill_in("user[name]", :with => @user2.name)
+    fill_in("user[email]", :with => @user2.email)
+    fill_in("user[password]", :with => @user2.password)
+    click_button('Sign Up')
+    expect(page).to have_content("Log Out")
+  end
+
+end
