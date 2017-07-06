@@ -1,4 +1,14 @@
 <%= form_for @inventory do |f| %>
+  <div id=error_explanation>
+  <% if @inventory.errors.any? %>
+  <ul>
+    <% @inventory.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  </div>
+  <% end %>
+
   <br></br>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
