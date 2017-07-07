@@ -1,10 +1,12 @@
 class InventoriesController < ApplicationController
+  #before_action :set_inventory, only: [:show]
 
   def index
   end
 
   def new
     @inventory = Inventory.new
+    @user = current_user
   end
 
   def create
@@ -22,7 +24,11 @@ class InventoriesController < ApplicationController
   private
 
   def inventory_params
-    params.require(:inventory).permit(:name)
+    params.require(:inventory).permit(:name, :user_id)
   end
+
+  # def set_inventory
+  #   @inventory = Inventory.find(params[:])
+  # end
 
 end
