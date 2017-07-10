@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  before_action :set_inventory, only: [:show, :edit]
+  before_action :set_inventory, only: [:show, :edit, :update]
   before_action :logged_in?
 
   def index
@@ -23,6 +23,15 @@ class InventoriesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+  end
+
+  def update
+    if @inventory.update(inventory_params)
+      redirect_to inventory_path(@inventory)
+    else
+      render edit_inventory_path(@inventory)
+    end
   end
 
   private
