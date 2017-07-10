@@ -1,13 +1,12 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update]
-  before_action :logged_in?
+  before_action :logged_in?, :current_user
 
   def index
   end
 
   def new
     @inventory = Inventory.new
-    @user = current_user
   end
 
   def create
@@ -23,7 +22,6 @@ class InventoriesController < ApplicationController
   end
 
   def edit
-    @user = current_user
   end
 
   def update
