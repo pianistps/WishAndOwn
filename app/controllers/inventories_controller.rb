@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  #before_action :set_inventory, only: [:show]
+  before_action :set_inventory, only: [:show]
 
   def index
   end
@@ -27,8 +27,8 @@ class InventoriesController < ApplicationController
     params.require(:inventory).permit(:name, :user_id)
   end
 
-  # def set_inventory
-  #   @inventory = Inventory.find(params[:])
-  # end
+  def set_inventory
+    @inventory = Inventory.find(params[:id])
+  end
 
 end
