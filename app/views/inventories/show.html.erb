@@ -1,2 +1,5 @@
+<br></br>
+<%= link_to "Home", user_path(current_user.id) %><br></br>
+<%= link_to "Inventories", inventories_path %><br></br>
 
 <%= @inventory.name if @inventory && @inventory.name %>
