@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  before_action :set_inventory, only: [:show]
+  before_action :set_inventory, only: [:show, :edit]
   before_action :logged_in?
 
   def index
@@ -20,6 +20,9 @@ class InventoriesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   private
