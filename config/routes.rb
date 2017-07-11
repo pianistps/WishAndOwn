@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :wishlists
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
-  resources :inventories
+
+  get '/inventories', to: 'inventories#index', as: :my_inventories
+  resources :inventories, :except => :index
 
   root 'users#index'
   resources :sessions, only: [:new, :create, :destroy]
