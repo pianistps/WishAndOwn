@@ -3,7 +3,7 @@ class InventoriesController < ApplicationController
   before_action :logged_in?, :current_user
 
   def index
-    @inventories = Inventory.all
+    @inventories = Inventory.user_inventories(current_user)
   end
 
   def new
