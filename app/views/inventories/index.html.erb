@@ -1,5 +1,4 @@
 <%= link_to "New Inventory", new_inventory_path %><br></br>
-<%= link_to "Home", user_path(current_user.id) %><br></br>
 
 <% @inventories.each do |i| %>
   <%= i.name if i != nil %><br></br>
