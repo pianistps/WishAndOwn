@@ -1,5 +1,4 @@
-<br></br>
-<%= link_to "Home", user_path(current_user.id) %><br></br>
+<br>
 <%= link_to "My Inventories", my_inventories_path %><br></br>
 
-<%= @inventory.name if @inventory && @inventory.name %>
+<h3><%= @inventory.name if @inventory && @inventory.name %> </h3>
