@@ -1,0 +1,25 @@
+<%= link_to "Home", user_path(current_user.id) %>
+<%= link_to "My Wishlists", wishlists_path %>
+
+<%= form_for @wishlist do |f| %>
+  <div id=error_explanation>
+  <% if @wishlist.errors.any? %>
+  <ul>
+    <% @wishlist.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <br></br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  
+  <%= f.submit %>
+<% end %>
