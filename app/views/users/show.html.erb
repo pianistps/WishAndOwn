@@ -1,3 +1,4 @@
 <%= "Welcome #{current_user.name}"%>
 <br></br>
 <%= link_to "Your Inventories", inventories_path if current_user %>
+<%= link_to "Your Wishlists", wishlists_path if current_user %>
