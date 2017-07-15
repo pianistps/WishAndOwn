@@ -1,5 +1,5 @@
 <%= link_to "New Inventory", new_inventory_path %><br></br>
 
 <% @inventories.each do |i| %>
-  <%= i.name if i != nil %><br></br>
+  <%= link_to i.name, inventory_path(i) if i != nil %><br></br>
 <% end %>
