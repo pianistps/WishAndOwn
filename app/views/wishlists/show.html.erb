@@ -2,4 +2,5 @@
 <%= link_to "My Wishlists", wishlists_path %><br></br>
 
 <h3><%= @wishlist.name if @wishlist && @wishlist.name %> </h3>
+<%= @wishlist.description if @wishlist.description %>
 <br></br><%= link_to "Edit this Wishlist", edit_wishlist_path(@wishlist) if @wishlist %>
