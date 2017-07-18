@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users
 
-  get '/inventories', to: 'inventories#index', as: :my_inventories
+  get '/my_inventories', to: 'inventories#index', as: :my_inventories
   resources :inventories, :except => :index do
     resources :items
   end
