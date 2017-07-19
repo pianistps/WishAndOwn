@@ -20,6 +20,9 @@ class InventoriesController < ApplicationController
   end
 
   def show
+    if @inventory.items
+      @items = @inventory.items
+    end
   end
 
   def edit
