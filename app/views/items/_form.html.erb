@@ -1,5 +1,23 @@
 
 <%= form_for(@parent) do |f| %>
+  <div id=error_explanation>
+  <% if @parent.errors.any? %>
+  <ul>
+    <% @parent.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  </div>
+  <% end %>
 
+  <%= f.fields_for :items, Item.new do |item_builder| %>
+    <%= item_builder.label :name %>
+    <%= item_builder.text_field :name %>
+    <%= item_builder.label :description %>
+    <%= item_builder.text_field :description %>
+    <%= item_builder.label :url %>
+    <%= item_builder.text_field :url %>
+  <% end %>
 
+  <%= f.submit "Add the item to #{@parent.name}" %>
 <% end %>
