@@ -4,3 +4,9 @@
 <h3><%= @inventory.name if @inventory && @inventory.name %> </h3>
 
 <br></br><%= link_to "Edit this Inventory", edit_inventory_path(@inventory) if @inventory %>
+<ul>
+<% @items.each do |item| %>
+  <li><%= item.name if item %></li>
+  <%#=put link to item here%>
+<% end %>
+</ul>
