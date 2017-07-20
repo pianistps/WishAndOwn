@@ -1,6 +1,7 @@
 <%= link_to "New Wishlist", new_wishlist_path %><br></br>
-
+<ul>
 <% @wishlists.each do |i| %>
   <br></br>
-  <%= link_to i.name, wishlist_path(i) if i != nil%>
+  <li><%= link_to i.name, wishlist_path(i) if i != nil%>
 <% end %>
+</ul>
