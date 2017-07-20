@@ -13,7 +13,7 @@ Specs:
 - [X] Include login (how e.g. Devise)
 - [X] Include logout (how e.g. Devise)
 - [X] Include third party signup/login (OmniAuth Facebook)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (inventories/1/items/1 show page)
 - [x] Include nested resource "new" form (URL e.g. inventory/1/items/new)
 - [x] Include form display of validation errors (users, inventory, items)
 
