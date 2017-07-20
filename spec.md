@@ -4,18 +4,18 @@ Specs:
 - [x] Using Ruby on Rails for the project
 - [x] Include at least one has_many relationship (User has many inventories)
 - [x] Include at least one belongs_to relationship (Inventory belongs to User)
-- [ ] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
+- [x] Include at least one has_many through relationship (Inventory has_many items through inventory items)
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (name, description,url for items)
 - [x] Include reasonable validations for simple model objects (Validates name for inventory and validates email, password length for user)
 - [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-- [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
+- [x] Include a nested form writing to an associated model using a custom attribute writer (Item writes to inventory)
 - [X] Include signup (how e.g. Devise)
 - [X] Include login (how e.g. Devise)
 - [X] Include logout (how e.g. Devise)
 - [X] Include third party signup/login (OmniAuth Facebook)
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include nested resource "new" form (URL e.g. inventory/1/items/new)
+- [x] Include form display of validation errors (users, inventory, items)
 
 Confirm:
 - [ ] The application is pretty DRY
