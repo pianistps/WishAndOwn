@@ -6,7 +6,6 @@
 <br></br><%= link_to "Edit this Inventory", edit_inventory_path(@inventory) if @inventory %>
 <ul>
 <% @items.each do |item| %>
-  <li><%= item.name if item %></li>
-  <%#=put link to item here%>
+  <li><%= link_to item.name, inventory_item_path(@inventory, item) if item %></li>
 <% end %>
 </ul>
