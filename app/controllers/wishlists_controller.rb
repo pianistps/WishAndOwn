@@ -20,6 +20,9 @@ class WishlistsController < ApplicationController
   end
 
   def show
+    if @wishlist.items
+      @items = @wishlist.items
+    end
   end
 
   def edit
@@ -36,7 +39,7 @@ class WishlistsController < ApplicationController
   private
 
   def wishlist_params
-    params.require(:wishlist).permit(:name, :description, :user_id)
+    params.require(:wishlist).permit(:name, :description, :user_id, :items_attributes => [:name, :description, :url])
   end
 
   def set_wishlist
