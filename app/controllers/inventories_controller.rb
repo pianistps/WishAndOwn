@@ -1,6 +1,7 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :edit, :update]
   before_action :logged_in?, :current_user
+  before_action :clean_join_tables, only: [:update]
 
   def index
     @inventories = Inventory.user_inventories(current_user)
