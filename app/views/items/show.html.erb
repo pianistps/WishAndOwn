@@ -3,3 +3,9 @@
 <%= @item.name %><br />
 Description: <%= @item.description if @item.description %><br />
 Url: <%= @item.url if @item.url %>
+
+<% if @parent.class.name.demodulize == "Inventory" %>
+  <%= link_to "Edit #{@item.name}", edit_inventory_item_path(@parent, @item) %>
+<% elsif @parent.class.name.demodulize == "Wishlist"%>
+  <%= link_to "Edit #{@item.name}", edit_wishlist_item_path(@parent, @item) %>
+<% end %>
