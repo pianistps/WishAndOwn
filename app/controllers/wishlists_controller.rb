@@ -1,5 +1,5 @@
 class WishlistsController < ApplicationController
-  before_action :set_wishlist, only: [:show, :edit, :update]
+  before_action :set_wishlist, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, :current_user
   before_action :clean_join_tables, only: [:update]
 
@@ -35,6 +35,11 @@ class WishlistsController < ApplicationController
     else
       render edit_wishlist_path(@wishlist)
     end
+  end
+
+  def destroy
+    @wishlist.destroy
+    redirect_to my_inventories_path
   end
 
   private
