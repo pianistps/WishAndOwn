@@ -12,3 +12,5 @@
   <li><%= link_to item.name, inventory_item_path(@inventory, item) if item %></li>
 <% end %>
 </ul>
+
+<%= link_to 'Delete this Inventory', @inventory, method: :delete, data: {confirm: "Are you sure?"} %>
