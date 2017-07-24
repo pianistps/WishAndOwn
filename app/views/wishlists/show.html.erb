@@ -12,3 +12,5 @@
   <li><%= link_to item.name, wishlist_item_path(@wishlist, item) if item %></li>
 <% end %>
 </ul>
+
+<%= link_to 'Delete this Wishlist', @wishlist, method: :delete, data: {confirm: "Are you sure?"} %>
