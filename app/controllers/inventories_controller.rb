@@ -1,5 +1,5 @@
 class InventoriesController < ApplicationController
-  before_action :set_inventory, only: [:show, :edit, :update]
+  before_action :set_inventory, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, :current_user
   before_action :clean_join_tables, only: [:update]
 
@@ -35,6 +35,11 @@ class InventoriesController < ApplicationController
     else
       render edit_inventory_path(@inventory)
     end
+  end
+
+  def destroy
+    @inventory.destroy
+    redirect_to my_inventories_path
   end
 
   private
