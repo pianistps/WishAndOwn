@@ -1,8 +1,13 @@
 class ItemsController < ApplicationController
   before_action :logged_in?, :current_user
-  before_action :inventory_or_wishlist, only: [:new]
+  before_action :inventory_or_wishlist, only: [:new, :edit, :show]
 
   def new
+    @item = Item.new
+  end
+
+  def edit
+    @item = Item.find(params[:id])
   end
 
   def show
