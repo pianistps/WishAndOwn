@@ -10,7 +10,7 @@
   </div>
   <% end %>
 
-  <%= f.fields_for :items, Item.new do |item_builder| %>
+  <%= f.fields_for :items, @item do |item_builder| %>
     <%= item_builder.label :name %>
     <%= item_builder.text_field :name %>
     <%= item_builder.label :description %>
