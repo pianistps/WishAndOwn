@@ -2,9 +2,11 @@
 <% if @parent.class.name.demodulize == "Inventory" %>
   <%= link_to "Back to Inventory", inventory_path(@parent) %><br />
   <%= link_to "Edit #{@item.name}", edit_inventory_item_path(@parent, @item) %>
+  <%= link_to 'Delete this Item', inventory_item_path(@parent, @item), method: :delete, data: {confirm: "Are you sure?"} %>
 <% elsif @parent.class.name.demodulize == "Wishlist"%>
   <%= link_to "Back to Wishlist", wishlist_path(@parent) %><br />
   <%= link_to "Edit #{@item.name}", edit_wishlist_item_path(@parent, @item) %>
+  <%= link_to 'Delete this Item', wishlist_item_path(@parent, @item), method: :delete, data: {confirm: "Are you sure?"} %>
 <% end %><br />
 
 <%= @item.name %><br />
