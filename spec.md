@@ -7,7 +7,7 @@ Specs:
 - [x] Include at least one has_many through relationship (Inventory has_many items through inventory items)
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (name, description,url for items)
 - [x] Include reasonable validations for simple model objects (Validates name for inventory and validates email, password length for user)
-- [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (users/my_wishlists)
 - [x] Include a nested form writing to an associated model using a custom attribute writer (Item writes to inventory)
 - [X] Include signup (how e.g. Devise)
 - [X] Include login (how e.g. Devise)
