@@ -1,17 +1,22 @@
 class ItemsController < ApplicationController
   before_action :logged_in?, :current_user
-  before_action :inventory_or_wishlist, only: [:new, :edit, :show]
+  before_action :inventory_or_wishlist, only: [:new, :edit, :show, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :destroy_item_clean, only: [:destroy]
 
   def new
     @item = Item.new
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def show
-    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to user_path(current_user)
   end
 
   private
@@ -24,5 +29,17 @@ class ItemsController < ApplicationController
       @parent = Inventory.find(params[:inventory_id])
     end
     @parent
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  def destroy_item_clean
+    if WishlistItem.where(item_id: @item.id)
+      WishlistItem.where(item_id: @item.id).destroy_all
+    elsif InventoryItem.where(item_id: @item.id)
+      InventoryItem.where(item_id: @item.id).destroy_all
+    end
   end
 end
