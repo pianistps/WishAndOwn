@@ -9,8 +9,14 @@
   </head>
 
   <body>
+    <header>
+      <h1>Wish and Own</h1>
+      <nav>
+        <%= render partial: '/layouts/navbar' %>
+      </nav>
+    </header>
+    
     <img src="../../images/bookspic.jpg" alt="A room full of books" title="Wish and Own">
-    <%= render partial: '/layouts/navbar' %>
     <%= yield %>
   </body>
 </html>
