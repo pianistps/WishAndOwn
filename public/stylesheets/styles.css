@@ -21,3 +21,12 @@ body {
   background-color: #FFF;
   z-index: 1
 }
+
+a {
+  color: RGB(0, 43, 54);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
