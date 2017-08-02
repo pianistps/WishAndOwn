@@ -4,8 +4,12 @@
     <title>WishAndOwn</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -17,7 +21,6 @@
     </header>
 
     <section id="#">
-      <img src="../../images/bookspic.jpg" alt="A room full of books" title="Wish and Own">
       <%= yield %>
     </section>
 
