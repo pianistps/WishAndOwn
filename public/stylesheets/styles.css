@@ -1,6 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+/*/////Global///////*/
 
+a {
+  color: RGB(0, 43, 54);
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*//////Main body/////*/
 body {
   font-family: 'Lato', 'Helvetica', sans-serif;
   margin: 0;
@@ -13,6 +25,7 @@ body {
   background-size: cover;
 }
 
+/*///////Navbar///////*/
 nav {
   position: fixed;
   top: 0px;
@@ -21,25 +34,19 @@ nav {
   background-color: #f8f8f8;
 }
 
-a {
-  color: RGB(0, 43, 54);
-  text-decoration: none;
-  margin-right: 5px;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
 #align-nav {
   float: right;
   text-align: right;
 }
 
+/*///////Logo///////*/
+
 #logo {
  float: left;
  margin-left: 5px;
 }
+
+/*///////Footer///////*/
 
 footer {
    position: absolute;
@@ -50,6 +57,8 @@ footer {
    background-color: #efefef;
    text-align: center;
  }
+
+ /*/////Fixes////*/
 
 .clearfix:after {
   content: ".";
