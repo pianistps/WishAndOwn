@@ -18,21 +18,31 @@ body {
   top: 0px;
   width: 100%;
   border-bottom: #666 2px solid;
-  background-color: #FFF;
+  background-color: #f8f8f8;
   z-index: 1
 }
 
 a {
   color: RGB(0, 43, 54);
   text-decoration: none;
-  padding-right: 5px;
+  margin-right: 5px;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-.align-nav {
+#align-nav {
   float: right;
   text-align: right;
+}
+
+#logo {
+ float: left;
+ margin-left: 5px;
+}
+
+.clear {
+  display: block;
+  clear: both;
 }
