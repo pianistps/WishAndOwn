@@ -12,23 +12,25 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div id="logo">
-          <h1> Wish and Own </h1>
-        </div>
-        <%= render partial: '/layouts/navbar' %>
-      </nav>
-    </header>
-
-    <div class="clear">
-      <section id="#">
-        <%= yield %>
-      </section>
-
-      <footer>
-        &copy; 2017 Wish and Own. All rights reserved.
-      </footer>
+    <div class="clearfix">
+      <header>
+        <nav>
+          <div id="logo">
+            <h1> Wish and Own </h1>
+          </div>
+          <%= render partial: '/layouts/navbar' %>
+        </nav>
+      </header>
     </div>
+
+
+    <section id="#">
+      <%= yield %>
+    </section>
+
+    <footer>
+      &copy; 2017 Wish and Own. All rights reserved.
+    </footer>
+
   </body>
 </html>
