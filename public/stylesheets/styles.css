@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Oswald');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Lato');
 /*/////Global///////*/
 
 a {
@@ -14,7 +14,7 @@ a:hover {
 
 /*//////Main body/////*/
 body {
-  font-family: 'Lato', 'Helvetica', sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
   background-image: url(/images/bookspicture.jpg);
   background-repeat: no-repeat;
@@ -39,9 +39,14 @@ nav {
   text-align: right;
 }
 
+#navbar {
+  font-family: 'Lato', sans-serif;
+}
+
 /*///////Logo///////*/
 
 #logo {
+ font-family: 'Courgette', cursive;
  float: left;
  margin-left: 5px;
 }
