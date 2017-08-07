@@ -12,6 +12,10 @@ a:hover {
   text-decoration: underline;
 }
 
+/*.displayleft {
+
+}*/
+
 /*//////Main body/////*/
 body {
   font-family: 'Lato', sans-serif;
@@ -26,7 +30,7 @@ body {
 }
 
 #content {
-  display: inline-block;
+   display: inline-block;
    margin: 0 auto;
    width: 100%;
    padding-left: 30px;
@@ -36,21 +40,10 @@ body {
    overflow: auto;
 }
 
-.books {
-  /*margin: 0;
-  background-image: url(/images/bookspicture.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
-}
-
 /*///////Layout///////*/
 
 .wrapper {
-  width: 920px;
+  width: 750px;
   margin: 0 auto;
   background: #eee;
   margin-top: 80px;
@@ -107,6 +100,9 @@ body {
   margin: 10px;
   color: white;
 }
+
+/*/////form styling//////*/
+
 .form {
   display:block;
   text-align: center;
