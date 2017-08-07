@@ -98,6 +98,16 @@ body {
    text-align: center;
  }
 
+/*/////Button//////*/
+
+.button {
+  display: inline-block;
+  background-color: #002B36;
+  padding: 10px 20px;
+  margin: 10px;
+  color: white;
+}
+
  /*/////Fixes////*/
 
 .clearfix:after {
