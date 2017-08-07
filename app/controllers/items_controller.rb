@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :inventory_or_wishlist, only: [:new, :edit, :show, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :destroy_item_clean, only: [:destroy]
+  before_action :clean_join_tables, only: [:update]
 
   def new
     @item = Item.new
@@ -12,6 +13,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+  end
+
+  def update
   end
 
   def destroy
