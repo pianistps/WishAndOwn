@@ -11,13 +11,13 @@
   <% end %>
 
   <%= f.fields_for :items, @item do |item_builder| %>
-    <%= item_builder.label :name %>
-    <%= item_builder.text_field :name %>
-    <%= item_builder.label :description %>
-    <%= item_builder.text_field :description %>
-    <%= item_builder.label :url %>
-    <%= item_builder.text_field :url %>
+    <%= item_builder.label :name %><br>
+    <%= item_builder.text_field :name %><br></br>
+    <%= item_builder.label :description %><br>
+    <%= item_builder.text_field :description %><br></br>
+    <%= item_builder.label :url %><br>
+    <%= item_builder.text_field :url %><br></br>
   <% end %>
 
-  <%= f.submit "Add the item to #{@parent.name}" %>
+  <%= f.submit "Add the item to '#{@parent.name}'", :class => 'button' %>
 <% end %>
