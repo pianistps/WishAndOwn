@@ -107,6 +107,8 @@ body {
   margin: 10px;
   color: white;
 }
+.form { display:block; text-align: center;}
+form  { text-align: left; display: inline-block; margin-left: auto; margin-right: auto;}
 
  /*/////Fixes////*/
 
