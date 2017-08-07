@@ -13,11 +13,11 @@
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <br></br>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
+  <%= f.label :name %>:<br>
+  <%= f.text_field :name %><br></br>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.label :description %>:<br>
+  <%= f.text_field :description %><br></br>
 
-  <%= f.submit %>
+  <%= f.submit :class => 'button'%>
 <% end %>
