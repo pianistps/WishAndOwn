@@ -15,6 +15,20 @@ a:hover {
 /*//////Main body/////*/
 body {
   font-family: 'Lato', sans-serif;
+}
+
+#content {
+  display: inline-block;
+   margin: 0 auto;
+   width: 100%;
+   padding-left: 30px;
+   padding-right: 30px;
+   padding-bottom: 60px;
+   padding-top: 60px;
+   overflow: auto;
+}
+
+.books {
   margin: 0;
   background-image: url(/images/bookspicture.jpg);
   background-repeat: no-repeat;
@@ -25,27 +39,39 @@ body {
   background-size: cover;
 }
 
-/*///////Navbar///////*/
-nav {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  border-bottom: #666 2px solid;
-  background-color: #f8f8f8;
+/*///////Layout///////*/
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+  background: #eee;
+  margin-top: 80px;
+  text-align: center;
+  z-index: 0;
 }
 
+/*///////Navbar///////*/
+
 #align-nav {
+  display: block;
   float: right;
   text-align: right;
 }
 
 #navbar {
   font-family: 'Lato', sans-serif;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  border-bottom: #666 2px solid;
+  background-color: #f8f8f8;
+  z-index: 1;
 }
 
 /*///////Logo///////*/
 
 #logo {
+  display: block;
  font-family: 'Courgette', cursive;
  float: left;
  margin-left: 5px;
@@ -53,7 +79,7 @@ nav {
 
 /*///////Footer///////*/
 
-footer {
+#footer {
    font-size: x-small;
    position: absolute;
    right: 0;

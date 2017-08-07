@@ -12,32 +12,33 @@
   </head>
 
   <body>
-    <header>
-      <div class="wrapper clearfix">
-        <div id="navbar">
+    <div class="books">
+      <header>
+        <div id="navbar" class="clearfix">
           <nav>
             <div id="logo">
               <h1> Wish and Own </h1>
             </div>
-            <%= render partial: '/layouts/navbar' %>
+            <div id="align-nav">
+              <%= render partial: '/layouts/navbar' %>
+            </div>
           </nav>
         </div> <!-- navbar -->
-      </div> <!-- wrapper -->
-    </header>
+      </header>
 
-    <div class="wrapper clearfix">
-      <section id="content">
-        <%= yield %>
-      </section>
-    </div>
+        <div class="wrapper">
+          <section id="content">
+            <%= yield %>
+          </section>
+        </div> <!--- .wrapper -->
 
-
-    <div class="wrapper clearfix">
-      <section id="footer">
-        <footer>
-          &copy; 2017 Wish and Own. All rights reserved.
-        </footer>
-      </section>
-    </div>
+      <!-- <div class="clearfix"> -->
+        <section id="footer">
+          <footer>
+            &copy; 2017 Wish and Own. All rights reserved.
+          </footer>
+        </section>
+    <!--  </div> -->
+    </div><!-- .books -->
   </body>
 </html>
