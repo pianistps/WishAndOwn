@@ -1,11 +1,8 @@
 <br>
 <%= link_to "My Wishlists", wishlists_path %><br></br>
 
-<h3><%= @wishlist.name if @wishlist && @wishlist.name %> </h3>
-<%= @wishlist.description if @wishlist.description %>
-<br></br><%= link_to "Edit this Wishlist", edit_wishlist_path(@wishlist) if @wishlist %>
-
-<br /><%= link_to "Add item to this wishlist", new_wishlist_item_path(@wishlist) %><br />
+<h3>Wishlist Name: <%= @wishlist.name if @wishlist && @wishlist.name %> </h3>
+<p>Description: <%= @wishlist.description if @wishlist.description %> </p>
 
 <ul>
 <% @items.each do |item| %>
@@ -13,4 +10,6 @@
 <% end %>
 </ul>
 
+<br></br><%= link_to "Edit this Wishlist", edit_wishlist_path(@wishlist) if @wishlist %>
+<br /><%= link_to "Add item to this wishlist", new_wishlist_item_path(@wishlist) %><br />
 <%= link_to 'Delete this Wishlist', @wishlist, method: :delete, data: {confirm: "Are you sure?"} %>
