@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -26,19 +24,18 @@
         </div> <!-- navbar -->
       </header>
 
-        <div class="wrapper">
-          <section id="content">
-            <%= yield %>
-          </section>
-        </div> <!--- .wrapper -->
-
-      <!-- <div class="clearfix"> -->
-        <section id="footer">
-          <footer>
-            &copy; 2017 Wish and Own. All rights reserved.
-          </footer>
+      <div class="wrapper">
+        <section id="content">
+          <%= yield %>
         </section>
-    <!--  </div> -->
+      </div> <!--- .wrapper -->
+
+
+      <section id="footer">
+        <footer>
+          &copy; 2017 Wish and Own. All rights reserved.
+        </footer>
+      </section>
     </div><!-- .books -->
   </body>
 </html>
