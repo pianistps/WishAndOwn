@@ -1,7 +1,6 @@
 class WishlistsController < ApplicationController
   before_action :set_wishlist, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?, :current_user
-  before_action :clean_join_tables, only: [:update]
 
   def index
     @wishlists = Wishlist.user_wishlists(current_user)
