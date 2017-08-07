@@ -1,5 +1,7 @@
 <br>
-<%= link_to "My Wishlists", wishlists_path %><br></br>
+<div class="displayleft">
+  <%= link_to "Go back to my Wishlists", wishlists_path %><br></br>
+</div>
 
 <h3>Wishlist Name: <%= @wishlist.name if @wishlist && @wishlist.name %> </h3>
 <p>Description: <%= @wishlist.description if @wishlist.description %> </p>
@@ -10,6 +12,7 @@
 <% end %>
 </ul>
 
+<br /><br />
 <br></br><%= link_to "Edit this Wishlist", edit_wishlist_path(@wishlist) if @wishlist %>
 <br /><%= link_to "Add item to this wishlist", new_wishlist_item_path(@wishlist) %><br />
 <%= link_to 'Delete this Wishlist', @wishlist, method: :delete, data: {confirm: "Are you sure?"} %>
