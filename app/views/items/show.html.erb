@@ -1,15 +1,17 @@
 <br />
-<% if @parent.class.name.demodulize == "Inventory" %>
-  <%= link_to "Back to Inventory", inventory_path(@parent) %><br />
-  <%= link_to "Edit #{@item.name}", edit_inventory_item_path(@parent, @item) %>
-  <%= link_to 'Delete this Item', inventory_item_path(@parent, @item), method: :delete, data: {confirm: "Are you sure?"} %>
-<% elsif @parent.class.name.demodulize == "Wishlist"%>
-  <%= link_to "Back to Wishlist", wishlist_path(@parent) %><br />
-  <%= link_to "Edit #{@item.name}", edit_wishlist_item_path(@parent, @item) %>
-  <%= link_to 'Delete this Item', wishlist_item_path(@parent, @item), method: :delete, data: {confirm: "Are you sure?"} %>
-<% end %><br />
+<div class="displayleft">
+  <% if @parent.class.name.demodulize == "Inventory" %>
+    <%= link_to "Back to Inventory", inventory_path(@parent) %><br />
+    <%= link_to "Edit this Item", edit_inventory_item_path(@parent, @item) %><br />
+    <%= link_to 'Delete this Item', inventory_item_path(@parent, @item), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% elsif @parent.class.name.demodulize == "Wishlist"%>
+    <%= link_to "Back to Wishlist", wishlist_path(@parent) %><br />
+    <%= link_to "Edit this Item", edit_wishlist_item_path(@parent, @item) %><br />
+    <%= link_to 'Delete this Item', wishlist_item_path(@parent, @item), method: :delete, data: {confirm: "Are you sure?"} %>
+  <% end %><br />
+</div>
 
-<%= @item.name %><br />
+<h3><%= @item.name %></h3><br />
 <% if @item.description %>
 Description: <%= @item.description %><br />
 <% end %>
