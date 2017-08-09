@@ -1,3 +1,11 @@
+<div class="displayleft">
+  <% if @parent.class.name.demodulize == "Inventory" %>
+    <%= link_to "Back to #{@parent.class.name}", inventory_path(@parent) %><br />
+  <% elsif @parent.class.name.demodulize == "Wishlist"%>
+    <%= link_to "Back to #{@parent.class.name}", wishlist_path(@parent) %><br />
+  <% end %><br />
+</div>
+
 <h2> Add a new Item </h2>
 
 <%= render 'form' %>
