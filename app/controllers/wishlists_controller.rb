@@ -38,7 +38,7 @@ class WishlistsController < ApplicationController
 
   def destroy
     @wishlist.destroy
-    redirect_to my_inventories_path
+    redirect_to my_wishlists_path
   end
 
   private
