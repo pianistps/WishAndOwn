@@ -2,14 +2,15 @@
 <h2> Sign in </h2>
 <div class="form">
   <%= form_for(@user, url: sessions_path, method: 'post') do |f| %>
-
-      <% if @user.errors.any? %>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-      <% end %>
+    <% if @user.errors.any? %>
+      <div class="error_explanation">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <%= f.label :email %>:
     <br>
