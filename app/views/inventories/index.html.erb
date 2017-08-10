@@ -1,5 +1,7 @@
+<h2> Your Inventories </h2>
 <%= link_to "New Inventory", new_inventory_path %><br></br>
-
-<% @inventories.each do |i| %>
-  <%= link_to i.name, inventory_path(i) if i != nil %><br></br>
-<% end %>
+<ul>
+  <% @inventories.each do |i| %>
+    <li><%= link_to i.name, inventory_path(i) if i != nil %></li><br></br>
+  <% end %>
+</ul>
