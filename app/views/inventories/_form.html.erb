@@ -1,4 +1,3 @@
-<%= link_to "My Inventories", my_inventories_path %>
 
 <%= form_for @inventory do |f| %>
   <div id=error_explanation>
@@ -17,5 +16,5 @@
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
 
-  <%= f.submit %>
+  <%= f.submit :class => 'button' %>
 <% end %>
