@@ -18,7 +18,7 @@ Specs:
 - [x] Include form display of validation errors (users, inventory, items)
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
