@@ -1,16 +1,17 @@
 <br>
-<%= link_to "My Inventories", my_inventories_path %><br></br>
+<div class="displayleft">
+  <%= link_to "My Inventories", my_inventories_path %><br></br>
+</div>
 
 <h3><%= @inventory.name if @inventory && @inventory.name %> </h3>
 
-<br></br><%= link_to "Edit this Inventory", edit_inventory_path(@inventory) if @inventory %>
-
-<br /><%= link_to "Add item to this inventory", new_inventory_item_path(@inventory) %><br />
-
 <ul>
-<% @items.each do |item| %>
-  <li><%= link_to item.name, inventory_item_path(@inventory, item) if item %></li>
-<% end %>
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, inventory_item_path(@inventory, item) if item %></li>
+  <% end %>
 </ul>
 
+<br></br>
+<br></br><%= link_to "Edit this Inventory", edit_inventory_path(@inventory) if @inventory %>
+<br /><%= link_to "Add item to this inventory", new_inventory_item_path(@inventory) %><br />
 <%= link_to 'Delete this Inventory', @inventory, method: :delete, data: {confirm: "Are you sure?"} %>
