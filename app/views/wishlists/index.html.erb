@@ -1,8 +1,8 @@
 <h2> Your Wishlists </h2>
 <%= link_to "Create a new Wishlist", new_wishlist_path %><br></br>
 <ul>
-<% @wishlists.each do |i| %>
-  <br></br>
-  <li><%= link_to i.name, wishlist_path(i) if i != nil%>
-<% end %>
+  <% @wishlists.each do |i| %>
+    <br></br>
+    <li><%= link_to i.name, wishlist_path(i) if i != nil%></li>
+  <% end %>
 </ul>
