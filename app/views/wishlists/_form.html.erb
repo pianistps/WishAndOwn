@@ -1,13 +1,13 @@
 
 <%= form_for @wishlist do |f| %>
-  <div id=error_explanation>
   <% if @wishlist.errors.any? %>
-  <ul>
-    <% @wishlist.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-  </div>
+    <div class=error_explanation>
+      <ul>
+        <% @wishlist.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
