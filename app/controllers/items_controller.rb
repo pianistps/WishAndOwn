@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :destroy_item_clean, only: [:destroy]
   before_action :clean_join_tables, only: [:update]
+  before_action :set_items, only: [:new]
 
   def new
     @item = Item.new
@@ -33,6 +34,15 @@ class ItemsController < ApplicationController
       @parent = Inventory.find(params[:inventory_id])
     end
     @parent
+  end
+
+  def set_items
+    @wishlists = current_user.wishlists
+    @items = []
+    @wishlists.each do |wishlist|
+      @items << wishlist.items
+    end
+    @items.flatten
   end
 
   def set_item

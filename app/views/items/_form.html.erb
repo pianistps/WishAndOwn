@@ -11,6 +11,9 @@
   <% end %>
 
   <%= f.fields_for :items, @item do |item_builder| %>
+    <% if @parent.class.name.demodulize == "Inventory" && @items%>
+      <%= item_builder.collection_check_boxes :item_ids, @items.flatten, @items.flatten.map{|item| item.id}, @items.flatten.map{|item| item.name} %>
+    <% end %>
     <%= item_builder.label :name %><br>
     <%= item_builder.text_field :name %><br></br>
     <%= item_builder.label :description %><br>
