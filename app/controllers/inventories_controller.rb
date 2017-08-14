@@ -30,6 +30,9 @@ class InventoriesController < ApplicationController
 
   def update
     if @inventory.update(inventory_params)
+      if params[:inventory][:item_ids]
+        clean_join_tables
+      end
       redirect_to inventory_path(@inventory)
     else
       render edit_inventory_path(@inventory)
@@ -49,6 +52,17 @@ class InventoriesController < ApplicationController
 
   def set_inventory
     @inventory = Inventory.find(params[:id])
+  end
+
+  def clean_join_tables
+    params[:inventory][:item_ids].each do |id|
+      if id != ""
+        @item = Item.find(id)
+        if WishlistItem.where(item_id: @item.id)
+          WishlistItem.where(item_id: @item.id).destroy_all
+        end
+      end
+    end
   end
 
 end
