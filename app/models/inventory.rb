@@ -1,6 +1,6 @@
 class Inventory < ApplicationRecord
   has_many :inventory_items, dependent: :destroy
-  has_many :items, through: :inventory_items
+  has_many :items, through: :inventory_items, dependent: :destroy
   belongs_to :user
   validates :name, presence: :true
 
@@ -23,6 +23,15 @@ class Inventory < ApplicationRecord
         if !self.items.include?(item)
           self.inventory_items.build(item: item)
         end
+      end
+    end
+  end
+
+  def item_ids=(item_ids)
+    item_ids.each do |id|
+      if id!=""
+        @item = Item.find(id)
+        self.inventory_items.build(item: @item)
       end
     end
   end
