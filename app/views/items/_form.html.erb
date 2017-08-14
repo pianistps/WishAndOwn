@@ -19,7 +19,7 @@
     <%= item_builder.text_field :url %><br></br>
   <% end %>
 
-  <% if @parent.class.name.demodulize == "Inventory" && @items%>
+  <% if @parent.class.name.demodulize == "Inventory" && !@items.empty? %>
     <%= f.label "Add an existing wishlist item to Inventory:" %><br>
     <%= f.collection_check_boxes :item_ids, @items, :id, :name %><br></br>
   <% end %>
