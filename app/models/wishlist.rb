@@ -3,7 +3,6 @@ class Wishlist < ApplicationRecord
   has_many :wishlist_items, dependent: :destroy
   has_many :items, through: :wishlist_items, dependent: :destroy
   validates :name, presence: :true
-  validates :name, uniqueness: :true
 
   def self.user_wishlists(user)
     where(user_id: user.id)
