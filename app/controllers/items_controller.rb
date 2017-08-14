@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   before_action :inventory_or_wishlist, only: [:new, :edit, :show, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :destroy_item_clean, only: [:destroy]
-  before_action :clean_join_tables, only: [:update]
   before_action :set_items, only: [:new]
 
   def new
@@ -42,7 +41,7 @@ class ItemsController < ApplicationController
     @wishlists.each do |wishlist|
       @items << wishlist.items
     end
-    @items.flatten
+    @items.flatten!
   end
 
   def set_item
