@@ -11,15 +11,17 @@
   <% end %>
 
   <%= f.fields_for :items, @item do |item_builder| %>
-    <% if @parent.class.name.demodulize == "Inventory" && @items%>
-      <%= item_builder.collection_check_boxes :item_ids, @items.flatten, @items.flatten.map{|item| item.id}, @items.flatten.map{|item| item.name} %>
-    <% end %>
     <%= item_builder.label :name %><br>
     <%= item_builder.text_field :name %><br></br>
     <%= item_builder.label :description %><br>
     <%= item_builder.text_field :description %><br></br>
     <%= item_builder.label :url %><br>
     <%= item_builder.text_field :url %><br></br>
+  <% end %>
+
+  <% if @parent.class.name.demodulize == "Inventory" && @items%>
+    <%= f.label "Add an existing wishlist item to Inventory:" %><br>
+    <%= f.collection_check_boxes :item_ids, @items, :id, :name %><br></br>
   <% end %>
 
   <%= f.submit "Add the item to '#{@parent.name}'", :class => 'button' %>
