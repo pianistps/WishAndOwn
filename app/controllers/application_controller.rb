@@ -12,22 +12,4 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user #make this method available in views
 
-
-  def clean_join_tables
-    if /inventories/.match(params[:controller])
-      @item = Item.find_by(name: params[:inventory][:items_attributes][:'0'][:name])
-      if @item != nil
-        if WishlistItem.where(item_id: @item.id)
-          WishlistItem.where(item_id: @item.id).destroy_all
-        end
-      end
-    elsif /wishlists/.match(params[:controller])
-      @item = Item.find_by(name: params[:wishlist][:items_attributes][:'0'][:name])
-      if @item != nil
-        if InventoryItem.where(item_id: @item.id)
-          InventoryItem.where(item_id: @item.id).destroy_all
-        end
-      end
-    end
-  end
 end
