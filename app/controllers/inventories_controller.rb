@@ -47,7 +47,7 @@ class InventoriesController < ApplicationController
   private
 
   def inventory_params
-    params.require(:inventory).permit(:name, :user_id, item_ids:[], :items_attributes => [:name, :description, :url])
+    params.require(:inventory).permit(:name, :user_id, :comment, item_ids:[], :items_attributes => [:name, :description, :url])
   end
 
   def set_inventory

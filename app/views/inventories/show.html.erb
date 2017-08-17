@@ -4,6 +4,7 @@
 </div>
 
 <h3><%= @inventory.name if @inventory && @inventory.name %> </h3>
+<%= @inventory.comment %>
 
 <ul>
   <% @items.each do |item| %>
