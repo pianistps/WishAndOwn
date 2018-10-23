@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'nokogiri'
-gem 'sprockets', '>= 3.6.2'
+gem 'sprockets', '>=3.7.2'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
